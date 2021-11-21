@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>管理者用画面</title>
-</head>
-<body>
-    <h1>管理者用画面</h1>
-</body>
+    <head th:replace="common/head :: head_fragment(title= 'ログイン',
+        scripts= ~{::script}, links= ~{::link})">
+        <!-- 当画面で使用するjavascript、cssをフラグメントに渡します -->
+        <link th:href="@{/admin/css/index.css}" rel="stylesheet" />
+        <title>管理者用画面</title>
+    </head>
+    <body>
+    <!-- 共通部品を呼び出す -->
+    <div th:replace="common/header :: header"></div>
+        
+        <div class="container-fluid">
+            <a class="btn btn-primary btn-block" href="/admin/product/edit">商品登録</a>
+            <a class="btn btn-primary btn-block" href="/admin/product/list">商品一覧</a>
+            <a class="btn btn-primary btn-block" href="/admin/order/info/list">注文情報一覧</a>
+            <a class="btn btn-primary btn-block" href="/admin/user/info/list">利用者情報一覧</a>
+            <a class="btn btn-primary btn-block" href="/admin/change/password">パスワード変更</a>
+        </div>
+    </body>
 </html>

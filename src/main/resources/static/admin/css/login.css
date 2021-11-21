@@ -1,0 +1,34 @@
+.login-container {
+    width: 100%;
+    height: 100vh;
+    margin-top: 200px;
+}
+
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.login-container .login-user {
+    text-align: center;
+    margin-bottom:  15px;
+}
+
+.login-container .login-pass {
+    text-align: center;
+    margin-bottom:  50px;
+}
+
+.login-container  .form-control{
+    /* form-controlのdisplayを初期化 */
+    display: initial;
+
+}
+.login-container .login-btn {
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+.login-container input {
+    width: 40%;
+}

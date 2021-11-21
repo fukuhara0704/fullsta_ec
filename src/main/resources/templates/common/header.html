@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <!-- body内で共通化したい部品をfragment化する -->
+    <header th:fragment="header">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <a href="/admin" class="navbar-brand">管理者用</a>
+            <div class="header-content">
+                <a href="/admin/product/edit"><span class="navbar-text">商品登録</span></a>
+                <a href="/admin/product/list"><span class="navbar-text">商品一覧</span></a>
+                <a href="/admin/order/info/list"><span class="navbar-text">注文情報一覧</span></a>
+                <a href="/admin/user/info/list"><span class="navbar-text">利用者情報一覧</span></a>
+                <a href="/admin/change/password"><span class="navbar-text">パスワード変更</span></a>
+            </div>
+            <a href="/admin/logout"><span class="navbar-text">ログアウト</span></a>
+        </nav>
+    </header>
+</html>

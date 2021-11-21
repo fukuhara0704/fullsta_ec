@@ -1,0 +1,13 @@
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+.container-fluid a {
+    width: 50%;
+    height: 80px;
+    margin: 30px auto 30px auto;
+    font-size: 40px;
+    color:#FFF;
+    border-radius: 40px;
+}
