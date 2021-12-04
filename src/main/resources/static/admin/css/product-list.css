@@ -1,0 +1,25 @@
+thead, tbody {
+  display: block;
+}
+tbody {
+  overflow-y: scroll;
+  height: 400px;
+}
+
+td, th  {
+    /* min-width:  10em; */
+}
+/* table, td, th { 
+    border: 2px #2b2b2b solid; 
+} */
+
+td, th { 
+    padding: 15px;
+}
+
+.tbl-thead{
+    background-color: thistle;
+}
+.tbl-tbody{
+    background-color:whitesmoke;
+}

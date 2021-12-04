@@ -3,6 +3,7 @@
     <head th:replace="common/head :: head_fragment(title= '商品一覧',
         scripts= ~{::script}, links= ~{::link})">
         <!-- 当画面で使用するjavascript、cssをフラグメントに渡します -->
+        <link th:href="@{/admin/css/product-list.css}" rel="stylesheet">
         <script th:src="@{/admin/js/product-list.js}"></script>
     </head>
     <body>
@@ -15,26 +16,30 @@
                 <table class="list-tbl">
                     <thead class="tbl-thead">
                         <tr>
-                            <th>商品ID</th>
-                            <th>商品名</th>
-                            <th>値段</th>
-                            <th>在庫数</th>
-                            <th></th>
-                            <th></th>
+                            <th style="width: 136px;">商品ID</th>
+                            <th style="width: 608px;">商品名</th>
+                            <th style="width: 130px;">値段</th>
+                            <th style="width: 130px;">在庫数</th>
+                            <th style="width: 130px;"></th>
+                            <th style="width: 130px;"></th>
                         </tr>
                     </thead>
                     <tbody class="tbl-tbody">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                                <button class="btn btn-info" id="edit_btn_" value="">編集</button>
-                                <input type="hidden" id="hd_update_count" value="0"/>
-                        </td>
-                        <td>
-                                <button class="btn btn-danger" id="delete_btn_" value="">削除</button>
-                        </td>
+                        <th:block  th:each="productInfo, stat : ${productInfoDisplayList}">
+                            <tr>
+                                <td style="width: 130px;" th:text="${productInfo.productId}"></td>
+                                <td style="width: 608px;" th:text="${productInfo.productName}"></td>
+                                <td style="width: 130px;" th:text="${productInfo.productPrice}"></td>
+                                <td style="width: 130px;" th:text="${productInfo.productStockNum}"></td>
+                                <td style="width: 130px;">
+                                        <button class="btn btn-info" th:id="'edit_btn_' + ${stat.index}" value="">編集</button>
+                                        <input type="hidden" th:id="'hd_update_count_' + ${stat.index}" th:value="${productInfo.updateCount}"/>
+                                </td>
+                                <td style="width: 130px;">
+                                        <button class="btn btn-danger" th:id="'delete_btn_' + ${stat.index}" value="">削除</button>
+                                </td>
+                            </tr>
+                        </th:block>
                     </tbody>
                 </table>
         </div>

@@ -1,3 +1,6 @@
+// resizeイベントを発生
+// $(window).trigger('resize');
+
 $(function(){
     // 編集ボタン押下イベント
     $('#edit_btn_').on('click', function(){
